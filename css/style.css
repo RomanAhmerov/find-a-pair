@@ -1,0 +1,197 @@
+/* Стили для игры в пары */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url(../img/paper.jpg);
+    background-size: cover;
+}
+
+/* Контейнер */
+.container {
+    position: relative;
+
+    margin: 0 auto;
+    max-width: 1700px;
+}
+
+/* Ряд карточек */
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+
+/* Карты */
+.card {
+    position: relative;
+
+    width: 120px;
+    height: 180px;
+}
+
+.card:not(:last-child) {
+    margin-right: 15px;
+}
+
+.face-card {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 11px;
+
+    font-size: 40px;
+    font-weight: 500;
+
+    transform: rotateY(90deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+.number-card {
+    display: block;
+
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.back-card {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 11px;
+
+    background-image: url(../img/cardBack.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    z-index: 1;
+
+    transition: transform 0.2s 0.2s ease-in-out;
+}
+
+
+/* Стили для карт при клики */
+.back-card_active {
+    transform: rotateY(90deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.face-card_active {
+    transform: rotateY(0deg);
+    transition: transform 0.2s 0.2s ease-in-out;
+}
+
+/* Стили для тамера */
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.timer {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+/* Стили для блока информации */
+.info-game-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -150px;
+    margin-left: -300px;
+    width: 600px;
+    min-height: 300px;
+    border: 2px solid #008080;
+    border-radius: 15px;
+
+    background-color: rgba(0, 0, 0, 0.644);
+    z-index: 2;
+}
+
+.info-game-wrapper__title {
+    margin: 0;
+    
+    font-size: 40px;
+    color: #fff;
+}
+
+.info-game-wrapper__title_xs {
+    margin: 15px 0 0 0;
+    
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.info-game-wrapper__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-game-wrapper__input {
+    margin-top: 20px;
+
+    font-size: 20px;
+}
+
+.info-game-wrapper__description {
+    margin: 8px 0 0 0;
+    color: #fff;
+}
+
+.info-game-wrapper__button {
+    display: block;
+    margin-top: 45px;
+    padding: 10px 30px;
+    border-radius: 5px;
+
+    background-color: #008080;
+
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+}
+
+.invisible {
+    display: none;
+}
+
+.invisible-box__stop-click {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: transparent;
+
+    z-index: 2;
+}
+
+
+
